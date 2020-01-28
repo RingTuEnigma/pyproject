@@ -34,3 +34,5 @@ def run(server_class=HTTPServer, handler_class=calculationHandler):
 #Clever trick in a lot of python scripts, figure it out yourself ;)
 if __name__ == '__main__':
   run()
+
+#TEST
