@@ -6,8 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script>
+    var a = [1,2,3,4,5];
+    var b = ["cool", "cooler", "frieza"]
     function request(){
-      var a = [1,2,3,4,5];
+      var V = {num: a, temp:b};
+      var Val = JSON.stringify(V);
+      console.log(Val);
       xhttp = new XMLHttpRequest();
       //This function is called when the server's response is available
       xhttp.onreadystatechange = function() {
@@ -15,13 +19,13 @@
           //Decodes the JSON to a JavaScript Array
           response = JSON.parse(this.responseText)
           //As you can see here
-          document.getElementById("httpResponseBody").value = response[0];
+          document.getElementById("httpResponseBody").value = response.num;
         }
       }
       xhttp.open("POST", "http://127.0.0.1:8000/", true);
       xhttp.setRequestHeader("Content-Type", "application/json");
       //Encodes the JavaScript Array to a JSON string
-      xhttp.send(JSON.stringify(a));
+      xhttp.send(Val);
     }
   </script>
 </head>
