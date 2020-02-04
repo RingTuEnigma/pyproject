@@ -7,7 +7,8 @@ def test_function(body):
   data_list = json.loads(body)
   print(data_list)
   #Shows that the content is a list and not just a string
-  print(data_list[0])
+  print(data_list['num'])
   data_JSON = json.dumps(data_list)
+  print(data_JSON)
   return data_JSON
   

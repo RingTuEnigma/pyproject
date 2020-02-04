@@ -19,7 +19,7 @@
           //Decodes the JSON to a JavaScript Array
           response = JSON.parse(this.responseText)
           //As you can see here
-          document.getElementById("httpResponseBody").value = response[0];
+          document.getElementById("httpResponseBody").value = response.num;
         }
       }
       xhttp.open("POST", "http://127.0.0.1:8000/", true);
