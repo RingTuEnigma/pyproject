@@ -1,24 +1,4 @@
-classes = [0, 20, 50, 70, 100, 120]
-absolute = [3, 12, 6, 5, 4]
-w=len(absolute)
-umfang = 0
-average = 0
-median = 0
-deviation= 0
-sq = 0
-s = 0
-quantilesX = [0.05, 0.1, 0.25, 0.5, 0.75, 0.9, 0.95]
-q=len(quantilesX)
-quantiles = [0] *q
-relatives = [0] * w
-midpoints = [0] * w
-zweck=[0]
-hoe_brei = []
-results_empire = []
-x_achse = 0 
-for i in range(len(absolute)):
-    umfang += absolute[i]
-mittelwert =55.83
+
 def VarianzxAbweichung ():
         sq = (1/(umfang - 1))
         sq2 = 0
@@ -191,7 +171,48 @@ def deviationCalc(z): #med; av; NUMBER
     return deviation
 
 
-def Call():
+def Call(classes, absolute, z):
+    def Call(classes, absolute, z ):
+    global classes
+    classes = [0, 20, 50, 70, 100, 120]
+    global absolute
+    absolute = [3, 12, 6, 5, 4]
+    global w
+    w=len(absolute)
+    global umfang
+    umfang = 0
+    global average
+    average = 0
+    global median
+    median = 0
+    global deviation
+    deviation= 0
+    global sq
+    sq = 0
+    global s
+    s = 0
+    global quantilesX
+    quantilesX = [0.05, 0.1, 0.25, 0.5, 0.75, 0.9, 0.95]
+    global q
+    q=len(quantilesX)
+    global quantiles
+    quantiles = [0] *q
+    global relatives
+    relatives = [0] * w
+    global midpoints
+    midpoints = [0] * w
+    global zweck
+    zweck=[0]
+    global hoe_brei
+    hoe_brei = []
+    global results_empire
+    results_empire = []
+    global x_achse
+    x_achse = 0 
+    for i in range(len(absolute)):
+        umfang += absolute[i]
+    global mittelwert
+    mittelwert =55.83
     VarianzxAbweichung()
     Gini()
     histogramm(classes, absolute)
@@ -201,7 +222,7 @@ def Call():
     averageCalc()
     medianCalc()
     quantileCalc()
-    deviationCalc("med")
+    deviationCalc(z)
     
     Mathdict = {
         "midpoints" : midpoints,
