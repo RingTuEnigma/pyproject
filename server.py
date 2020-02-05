@@ -19,7 +19,8 @@ class calculationHandler(BaseHTTPRequestHandler):
   def do_POST(self):
     content_len = int(self.headers.get('Content-Length'))
     post_body = self.rfile.read(content_len)
-    response_data = custom_calc.test_function(post_body)
+    custom_calc.test_function(post_body)
+    response_data = custom_calc.do_calculation(post_body)
     self.send_response(200)
     self.send_header('content-type', 'json/application')
     self.send_header('Access-Control-Allow-Origin', '*')
