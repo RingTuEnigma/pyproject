@@ -75,7 +75,7 @@ def relativeCalc(relativeSum, relatives,absolute):
 def midpointCalc(midpoints,classes):
     for i in range(len(classes)-1):
         midpoints[i] =(round(((classes[i]+classes[i+1])/2),2))
-    return midpoint
+    return midpoints
 def averageCalc( relativeSum,relatives,midpoints,absolute):
     global average
     average = 0
@@ -118,7 +118,7 @@ def deviationCalc(z, quantilesX,relativeSum,quantiles,relatives,midpoints,classe
     if(z == "med"):
         z = medianCalc(quantilesX, relativeSum,quantiles,relatives,classes,absolute)
     elif (z == "av"):
-        z = averageCalc( relativeSum,relatives,midpoints,classes,absolute)
+        z = averageCalc(relativeSum,relatives,midpoints,absolute)
     midpointCalc(midpoints,classes)
     for i in range(len(absolute)):
         zSum = zSum + (absolute[i]*abs(midpoints[i]-z))
